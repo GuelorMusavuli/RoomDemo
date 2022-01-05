@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RoomDemo">
         <activity
-            android:name=".NewBookActivity"
+            android:name=".ui.NewBookActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

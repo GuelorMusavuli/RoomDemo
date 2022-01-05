@@ -1,11 +1,10 @@
-package com.guelmus.roomdemo
+package com.guelmus.roomdemo.ui
 
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import com.guelmus.roomdemo.databinding.ActivityMainBinding
 import com.guelmus.roomdemo.databinding.ActivityNewBookBinding
 
 class NewBookActivity : AppCompatActivity() {
@@ -16,8 +15,7 @@ class NewBookActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewBookBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
+        saveBook()
     }
 
     private fun saveBook(){
@@ -35,6 +33,7 @@ class NewBookActivity : AppCompatActivity() {
 
                 resultIntent.putExtra(NEW_AUTHOR, author)
                 resultIntent.putExtra(NEW_BOOK, book)
+                setResult(Activity.RESULT_OK, resultIntent)
             }
             finish()
         }
